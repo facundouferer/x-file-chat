@@ -13,23 +13,21 @@ const io = new Server(server);
 
 app.use(express.static(join(__dirname, "public")));
 
-var userCLiente = "";
-
 io.on("connection", (socket) => {
   socket.on("user", (username) => {
-    userCLiente = username;
-    io.emit("chat", `${userCLiente} ist connected`);
-    console.log(`${userCLiente} ist connected`);
-  });
+    io.emit("chat", `${username} ist connected`);
 
-  socket.on("chat", (msg) => {
-    console.log(`${userCLiente}: ${msg}`);
-    io.emit("chat", `${userCLiente}: ${msg}`);
-  });
+    console.log(`${username} ist connected`);
 
-  socket.on("disconnect", () => {
-    io.emit("chat", `${userCLiente} has disconnected`);
-    console.log(`${userCLiente} has disconnected`);
+    socket.on("chat", (msg) => {
+      console.log(`${username}: ${msg}`);
+      io.emit("chat", `${username}: ${msg}`);
+    });
+
+    socket.on("disconnect", () => {
+      io.emit("chat", `${username} has disconnected`);
+      console.log(`${username} has disconnected`);
+    });
   });
 });
 
