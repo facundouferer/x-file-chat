@@ -28,10 +28,6 @@ io.on("connection", (socket) => {
       io.emit("chat", `${username} has disconnected`);
       console.log(`${username} has disconnected`);
     });
-
-    socket.on("typing", (msg) => {
-      console.log(`${username} is typing`);
-    });
   });
 });
 
