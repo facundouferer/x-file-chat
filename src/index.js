@@ -21,12 +21,16 @@ io.on("connection", (socket) => {
 
     socket.on("chat", (msg) => {
       console.log(`${username}: ${msg}`);
-      io.emit("chat", `${username}: ${msg}`);
+      io.emit("chat", `<span>${username}:</span> ${msg}`);
     });
 
     socket.on("disconnect", () => {
       io.emit("chat", `${username} has disconnected`);
       console.log(`${username} has disconnected`);
+    });
+
+    socket.on("typing", (msg) => {
+      console.log(`${username} is typing`);
     });
   });
 });

@@ -7,12 +7,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <ul></ul>
-    <form>
-      <input type="text" class="form-control" />
-      <button class="btn btn-primary">SEND</button>
-    </form>
-
+    <div class="chat">
+      <ul></ul>
+    </div>
+    <footer>
+      <form>
+        <input type="text" class="form-control" />
+        <button class="btn btn-primary">SEND</button>
+      </form>
+      <p>
+        Developer by
+        <a href="https://www.linkedin.com/in/facundouferer/" target="_blank"
+          >Facundo</a
+        >
+      </p>
+    </footer>
     <script src="/socket.io/socket.io.js"></script>
     <script src="client.js"></script>
   </body>
