@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,700&family=Special+Elite&display=swap');
+
+
+$font-family: 'Special Elite';
+$green: #00FF00;
+$greenBlack: #048600;
+$black: #000000;
+$blackTransparent: #000000b2;
+
+* {
+    font-size: 1em;
+    font-family: $font-family;
+    color: $green;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: $black;
+    width: 100%;
+    max-height: 90vh;
+    max-width: 90vw;
+}
+
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-top: $greenBlack 1px solid;
+    padding: 5px;
+    background-color: $blackTransparent;
+
+    input {
+        width: 80%;
+        height: 30px;
+        color: $green;
+        border: none;
+        background: none;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    button {
+        margin-right: 10px;
+        width: 20%;
+        max-width: 200px;
+        height: 30px;
+        border: $green 1px solid;
+        color: rgb(102, 255, 0);
+        font-family: 'Special Elite', cursive;
+        background: none;
+    }
+}
+
+
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding-bottom: 40px;
+
+    li {
+        color: chartreuse;
+        margin-bottom: 0.5em;
+    }
+
+    li:nth-child(odd) {
+        color: rgb(16, 184, 1);
+    }
+}

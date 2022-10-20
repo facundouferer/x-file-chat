@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@1,700&family=Special+Elite&display=swap");
+* {
+  font-size: 1em;
+  font-family: "Special Elite";
+  color: #00FF00;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000000;
+  width: 100%;
+  max-height: 90vh;
+  max-width: 90vw;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-top: #048600 1px solid;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.6980392157);
+}
+form input {
+  width: 80%;
+  height: 30px;
+  color: #00FF00;
+  border: none;
+  background: none;
+}
+form input:focus {
+  outline: none;
+}
+form button {
+  margin-right: 10px;
+  width: 20%;
+  max-width: 200px;
+  height: 30px;
+  border: #00FF00 1px solid;
+  color: rgb(102, 255, 0);
+  font-family: "Special Elite", cursive;
+  background: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding-bottom: 40px;
+}
+ul li {
+  color: chartreuse;
+  margin-bottom: 0.5em;
+}
+ul li:nth-child(odd) {
+  color: rgb(16, 184, 1);
+}
+
+/*# sourceMappingURL=style.css.map */

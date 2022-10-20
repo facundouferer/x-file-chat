@@ -4,8 +4,13 @@ const input = document.querySelector("input");
 const ul = document.querySelector("ul");
 
 const username = prompt("What is your name?");
-localStorage.setItem("user", username);
-socket.emit("user", username);
+if (username === "") {
+  localStorage.setItem("user", "Anonymous");
+} else {
+  localStorage.setItem("user", username);
+}
+
+socket.emit("user", localStorage.getItem("user"));
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
