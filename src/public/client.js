@@ -3,11 +3,13 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 const ul = document.querySelector("ul");
 
-const username = prompt("What is your name?");
-if (username === "" || username === null) {
-  localStorage.setItem("user", "Anonymous");
-} else {
-  localStorage.setItem("user", username);
+if (!localStorage.getItem("username")) {
+  const username = prompt("What is your name?");
+  if (username === "" || username === null) {
+    localStorage.setItem("user", "Anonymous");
+  } else {
+    localStorage.setItem("user", username);
+  }
 }
 
 socket.emit("user", localStorage.getItem("user"));

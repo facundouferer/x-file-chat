@@ -35,8 +35,8 @@ footer p {
 
 form {
   padding: 5px;
-  border-top: #048600 1px solid;
-  border-bottom: #048600 1px solid;
+  border-top: #126b0f 1px solid;
+  border-bottom: #126b0f 1px solid;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -74,7 +74,7 @@ form button {
   margin-bottom: 0.5em;
 }
 .chat ul span {
-  color: #048600;
+  color: #126b0f;
   font-weight: 900;
 }
 

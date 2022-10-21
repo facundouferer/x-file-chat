@@ -15,7 +15,7 @@ app.use(express.static(join(__dirname, "public")));
 
 io.on("connection", (socket) => {
   socket.on("user", (username) => {
-    io.emit("chat", `${username} ist connected`);
+    io.emit("chat", `${username} is connected`);
 
     console.log(`${username} ist connected`);
 
