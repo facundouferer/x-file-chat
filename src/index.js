@@ -13,20 +13,29 @@ const io = new Server(server);
 
 app.use(express.static(join(__dirname, "public")));
 
+//array of users with id
+let usersOnline = [];
+
 io.on("connection", (socket) => {
   socket.on("user", (username) => {
-    io.emit("chat", `${username} is connected`);
-
+    usersOnline.push({ username: username, id: socket.id });
+    io.emit("chat", `<span>${username} is conecting </span>`);
     console.log(`${username} ist connected`);
+
+    io.emit("usersOnline", usersOnline);
 
     socket.on("chat", (msg) => {
       console.log(`${username}: ${msg}`);
-      io.emit("chat", `<span>${username}:</span> ${msg}`);
+      io.emit("chat", `${username}: ${msg}`);
     });
 
     socket.on("disconnect", () => {
-      io.emit("chat", `${username} has disconnected`);
+      usersOnline = usersOnline.filter(
+        (usersOnline) => usersOnline.id !== socket.id
+      );
+      io.emit("chat", `<strong>${username} has disconnected </strong>`);
       console.log(`${username} has disconnected`);
+      io.emit("usersOnline", usersOnline);
     });
   });
 });
