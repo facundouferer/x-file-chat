@@ -41,7 +41,7 @@ socket.on("usersOnline", (usersOnline) => {
   users.innerHTML = "";
   usersOnline.forEach((user) => {
     let li = document.createElement("li");
-    li.innerHTML = `<li><a href="http://${user.id}">${user.username}</a></li>`;
+    li.innerHTML = `<li>${user.username}</li>`;
     users.appendChild(li);
   });
 });
