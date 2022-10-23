@@ -5,21 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>X-File Chat</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
   </head>
-  <body>
+  <body class="crt">
+    <nav>
+      <h1>X-File Chat</h1>
+      <button id="btnConnected" class="">X</button>
+    </nav>
     <div class="principal">
       <section>
         <ul id="messages"></ul>
       </section>
-      <aside>
+      <aside class="connections">
         <h1>on-line</h1>
         <ul id="users"></ul>
       </aside>
     </div>
     <footer>
       <form>
-        <input type="text" class="form-control" />
-        <button class="btn btn-primary">SEND</button>
+        <input type="text" />
+        <button>SEND</button>
       </form>
       <p>
         Developed by

@@ -3,25 +3,21 @@
 
 $font-family: 'Cutive Mono',
 monospace;
-$green: #00FF00;
-$greenBlack: #126b0f;
-$black: #000000;
-$blackTransparent: #000000b2;
-$error: #800000;
+$primaryColor: #00FF00;
+$secondaryColor: #058001;
+$black: #011300;
+$blackTransparent: #011300b2;
+$thirdColor: #aa0000;
+$activado: #ff0e0e;
 
 * {
-    font-size: 1em;
+    font-size: 20px;
     font-family: $font-family;
-    color: $green;
+    color: $primaryColor;
 }
 
 a {
-    color: $green;
     text-decoration: none;
-}
-
-a:hover {
-    color: $error;
 }
 
 body {
@@ -30,59 +26,30 @@ body {
     flex-direction: column;
     background-color: $black;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     max-height: 100vh;
     max-width: 1000vw;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('favicon.png');
+    background-size: cover;
+    background-position: center;
+    image-rendering: pixelated;
 }
 
-
-footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: $blackTransparent;
-    height: 10vh;
-
-    p {
-        text-align: center;
-        font-size: 0.8em;
-        margin-top: 5px;
-        margin-bottom: 5px;
-    }
-}
-
-form {
-    padding: 5px;
-    border-top: $greenBlack 1px solid;
-    border-bottom: $greenBlack 1px solid;
+nav {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    background-color: $blackTransparent;
+    width: 100%;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: $secondaryColor solid 1px;
 
-    input {
-        width: 80%;
-        height: 30px;
-        color: $green;
-        border: none;
-        background: none;
-    }
-
-    input:focus {
-        outline: none;
-    }
-
-    button {
-        margin-right: 10px;
-        width: 20%;
-        max-width: 200px;
-        height: 30px;
-        border: $greenBlack 1px solid;
-        color: $green;
-        background: none;
-        cursor: pointer;
+    h1 {
+        margin-left: 10px;
     }
 }
 
@@ -91,23 +58,30 @@ form {
     justify-content: flex-start;
     width: 100vw;
     height: 90vh;
+    margin-top: 30px;
 
-    aside {
-        border-left: $greenBlack 1px solid;
+    .connections {
+        border-left: $secondaryColor 1px solid;
         width: 20%;
-        padding: 10px;
         position: fixed;
         right: -0px;
         height: 100%;
+        min-width: 200px;
+        background-color: $blackTransparent;
+
+        h1 {
+            text-align: center;
+            width: 100%;
+            margin: auto;
+            border-bottom: $secondaryColor 1px solid;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
 
         ul {
             list-style: none;
             margin: 0;
-            padding: 0;
-        }
-
-        @media screen and (max-width: 600px) {
-            display: none;
+            padding: 10px;
         }
     }
 
@@ -118,19 +92,298 @@ form {
         ul {
             list-style: none;
             margin: 0;
+            padding-bottom: 10vh;
 
             li {
                 margin-bottom: 0.5em;
             }
 
             span {
-                color: $greenBlack;
+                color: $secondaryColor;
                 font-weight: 900;
             }
 
             strong {
-                color: $error;
+                color: $thirdColor;
             }
         }
     }
+}
+
+footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $blackTransparent;
+    max-height: 10vh;
+
+    form {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 5px;
+        border-top: $secondaryColor 1px solid;
+        border-bottom: $secondaryColor 1px solid;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        button {
+            min-width: 80px;
+            margin-right: 10px;
+        }
+
+
+        input {
+            width: 90%;
+            height: 30px;
+            color: $primaryColor;
+            border: none;
+            background: none;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+    }
+}
+
+.hiddenElement {
+    display: none;
+}
+
+button {
+    margin: 5px;
+    min-height: 28px;
+    min-width: 28px;
+    border: $secondaryColor 1px solid;
+    background: none;
+    cursor: pointer;
+
+
+    &:hover {
+        color: $black;
+        background-color: $secondaryColor;
+        font-weight: 900;
+    }
+
+    animation: textShadow 1.6s infinite;
+}
+
+p {
+    text-align: center;
+    font-size: 0.8em;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+@keyframes flicker {
+    0% {
+        opacity: 0.27861;
+    }
+
+    5% {
+        opacity: 0.34769;
+    }
+
+    10% {
+        opacity: 0.23604;
+    }
+
+    15% {
+        opacity: 0.90626;
+    }
+
+    20% {
+        opacity: 0.18128;
+    }
+
+    25% {
+        opacity: 0.83891;
+    }
+
+    30% {
+        opacity: 0.65583;
+    }
+
+    35% {
+        opacity: 0.67807;
+    }
+
+    40% {
+        opacity: 0.26559;
+    }
+
+    45% {
+        opacity: 0.84693;
+    }
+
+    50% {
+        opacity: 0.96019;
+    }
+
+    55% {
+        opacity: 0.08594;
+    }
+
+    60% {
+        opacity: 0.20313;
+    }
+
+    65% {
+        opacity: 0.71988;
+    }
+
+    70% {
+        opacity: 0.53455;
+    }
+
+    75% {
+        opacity: 0.37288;
+    }
+
+    80% {
+        opacity: 0.71428;
+    }
+
+    85% {
+        opacity: 0.70419;
+    }
+
+    90% {
+        opacity: 0.7003;
+    }
+
+    95% {
+        opacity: 0.36108;
+    }
+
+    100% {
+        opacity: 0.24387;
+    }
+}
+
+@keyframes textShadow {
+    0% {
+        text-shadow: 0.4389924193300864px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193300864px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    5% {
+        text-shadow: 2.7928974010788217px 0 1px rgba(0, 30, 255, 0.5), -2.7928974010788217px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    10% {
+        text-shadow: 0.02956275843481219px 0 1px rgba(0, 30, 255, 0.5), -0.02956275843481219px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    15% {
+        text-shadow: 0.40218538552878136px 0 1px rgba(0, 30, 255, 0.5), -0.40218538552878136px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    20% {
+        text-shadow: 3.4794037899852017px 0 1px rgba(0, 30, 255, 0.5), -3.4794037899852017px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    25% {
+        text-shadow: 1.6125630401149584px 0 1px rgba(0, 30, 255, 0.5), -1.6125630401149584px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    30% {
+        text-shadow: 0.7015590085143956px 0 1px rgba(0, 30, 255, 0.5), -0.7015590085143956px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    35% {
+        text-shadow: 3.896914047650351px 0 1px rgba(0, 30, 255, 0.5), -3.896914047650351px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    40% {
+        text-shadow: 3.870905614848819px 0 1px rgba(0, 30, 255, 0.5), -3.870905614848819px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    45% {
+        text-shadow: 2.231056963361899px 0 1px rgba(0, 30, 255, 0.5), -2.231056963361899px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    50% {
+        text-shadow: 0.08084290417898504px 0 1px rgba(0, 30, 255, 0.5), -0.08084290417898504px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    55% {
+        text-shadow: 2.3758461067427543px 0 1px rgba(0, 30, 255, 0.5), -2.3758461067427543px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    60% {
+        text-shadow: 2.202193051050636px 0 1px rgba(0, 30, 255, 0.5), -2.202193051050636px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    65% {
+        text-shadow: 2.8638780614874975px 0 1px rgba(0, 30, 255, 0.5), -2.8638780614874975px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    70% {
+        text-shadow: 0.48874025155497314px 0 1px rgba(0, 30, 255, 0.5), -0.48874025155497314px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    75% {
+        text-shadow: 1.8948491305757957px 0 1px rgba(0, 30, 255, 0.5), -1.8948491305757957px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    80% {
+        text-shadow: 0.0833037308038857px 0 1px rgba(0, 30, 255, 0.5), -0.0833037308038857px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    85% {
+        text-shadow: 0.09769827255241735px 0 1px rgba(0, 30, 255, 0.5), -0.09769827255241735px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    90% {
+        text-shadow: 3.443339761481782px 0 1px rgba(0, 30, 255, 0.5), -3.443339761481782px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    95% {
+        text-shadow: 2.1841838852799786px 0 1px rgba(0, 30, 255, 0.5), -2.1841838852799786px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+
+    100% {
+        text-shadow: 2.6208764473832513px 0 1px rgba(0, 30, 255, 0.5), -2.6208764473832513px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+    }
+}
+
+.crt::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: rgba(18, 16, 16, 0.1);
+    opacity: 0;
+    z-index: 2;
+    pointer-events: none;
+    animation: flicker 0.15s infinite;
+}
+
+.crt::before {
+    content: " ";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    z-index: 2;
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none;
+}
+
+.crt {
+    animation: textShadow 1.6s infinite;
 }

@@ -1,74 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap");
 * {
-  font-size: 1em;
+  font-size: 20px;
   font-family: "Cutive Mono", monospace;
   color: #00FF00;
 }
 
 a {
-  color: #00FF00;
   text-decoration: none;
-}
-
-a:hover {
-  color: #800000;
 }
 
 body {
   margin: auto;
   display: flex;
   flex-direction: column;
-  background-color: #000000;
+  background-color: #011300;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   max-height: 100vh;
   max-width: 1000vw;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url("favicon.png");
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
 }
 
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.6980392157);
-  height: 10vh;
-}
-footer p {
-  text-align: center;
-  font-size: 0.8em;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-form {
-  padding: 5px;
-  border-top: #126b0f 1px solid;
-  border-bottom: #126b0f 1px solid;
+nav {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-}
-form input {
-  width: 80%;
+  background-color: rgba(1, 19, 0, 0.6980392157);
+  width: 100%;
   height: 30px;
-  color: #00FF00;
-  border: none;
-  background: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-bottom: #058001 solid 1px;
 }
-form input:focus {
-  outline: none;
-}
-form button {
-  margin-right: 10px;
-  width: 20%;
-  max-width: 200px;
-  height: 30px;
-  border: #126b0f 1px solid;
-  color: #00FF00;
-  background: none;
-  cursor: pointer;
+nav h1 {
+  margin-left: 10px;
 }
 
 .principal {
@@ -76,24 +46,29 @@ form button {
   justify-content: flex-start;
   width: 100vw;
   height: 90vh;
+  margin-top: 30px;
 }
-.principal aside {
-  border-left: #126b0f 1px solid;
+.principal .connections {
+  border-left: #058001 1px solid;
   width: 20%;
-  padding: 10px;
   position: fixed;
   right: 0px;
   height: 100%;
+  min-width: 200px;
+  background-color: rgba(1, 19, 0, 0.6980392157);
 }
-.principal aside ul {
+.principal .connections h1 {
+  text-align: center;
+  width: 100%;
+  margin: auto;
+  border-bottom: #058001 1px solid;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.principal .connections ul {
   list-style: none;
   margin: 0;
-  padding: 0;
-}
-@media screen and (max-width: 600px) {
-  .principal aside {
-    display: none;
-  }
+  padding: 10px;
 }
 .principal section {
   width: 80%;
@@ -102,16 +77,243 @@ form button {
 .principal section ul {
   list-style: none;
   margin: 0;
+  padding-bottom: 10vh;
 }
 .principal section ul li {
   margin-bottom: 0.5em;
 }
 .principal section ul span {
-  color: #126b0f;
+  color: #058001;
   font-weight: 900;
 }
 .principal section ul strong {
-  color: #800000;
+  color: #aa0000;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(1, 19, 0, 0.6980392157);
+  max-height: 10vh;
+}
+footer form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 5px;
+  border-top: #058001 1px solid;
+  border-bottom: #058001 1px solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+footer form button {
+  min-width: 80px;
+  margin-right: 10px;
+}
+footer form input {
+  width: 90%;
+  height: 30px;
+  color: #00FF00;
+  border: none;
+  background: none;
+}
+footer form input:focus {
+  outline: none;
+}
+
+.hiddenElement {
+  display: none;
+}
+
+button {
+  margin: 5px;
+  min-height: 28px;
+  min-width: 28px;
+  border: #058001 1px solid;
+  background: none;
+  cursor: pointer;
+  animation: textShadow 1.6s infinite;
+}
+button:hover {
+  color: #011300;
+  background-color: #058001;
+  font-weight: 900;
+}
+
+p {
+  text-align: center;
+  font-size: 0.8em;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.27861;
+  }
+  5% {
+    opacity: 0.34769;
+  }
+  10% {
+    opacity: 0.23604;
+  }
+  15% {
+    opacity: 0.90626;
+  }
+  20% {
+    opacity: 0.18128;
+  }
+  25% {
+    opacity: 0.83891;
+  }
+  30% {
+    opacity: 0.65583;
+  }
+  35% {
+    opacity: 0.67807;
+  }
+  40% {
+    opacity: 0.26559;
+  }
+  45% {
+    opacity: 0.84693;
+  }
+  50% {
+    opacity: 0.96019;
+  }
+  55% {
+    opacity: 0.08594;
+  }
+  60% {
+    opacity: 0.20313;
+  }
+  65% {
+    opacity: 0.71988;
+  }
+  70% {
+    opacity: 0.53455;
+  }
+  75% {
+    opacity: 0.37288;
+  }
+  80% {
+    opacity: 0.71428;
+  }
+  85% {
+    opacity: 0.70419;
+  }
+  90% {
+    opacity: 0.7003;
+  }
+  95% {
+    opacity: 0.36108;
+  }
+  100% {
+    opacity: 0.24387;
+  }
+}
+@keyframes textShadow {
+  0% {
+    text-shadow: 0.4389924193px 0 1px rgba(0, 30, 255, 0.5), -0.4389924193px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  5% {
+    text-shadow: 2.7928974011px 0 1px rgba(0, 30, 255, 0.5), -2.7928974011px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  10% {
+    text-shadow: 0.0295627584px 0 1px rgba(0, 30, 255, 0.5), -0.0295627584px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  15% {
+    text-shadow: 0.4021853855px 0 1px rgba(0, 30, 255, 0.5), -0.4021853855px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  20% {
+    text-shadow: 3.47940379px 0 1px rgba(0, 30, 255, 0.5), -3.47940379px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  25% {
+    text-shadow: 1.6125630401px 0 1px rgba(0, 30, 255, 0.5), -1.6125630401px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  30% {
+    text-shadow: 0.7015590085px 0 1px rgba(0, 30, 255, 0.5), -0.7015590085px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  35% {
+    text-shadow: 3.8969140477px 0 1px rgba(0, 30, 255, 0.5), -3.8969140477px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  40% {
+    text-shadow: 3.8709056148px 0 1px rgba(0, 30, 255, 0.5), -3.8709056148px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  45% {
+    text-shadow: 2.2310569634px 0 1px rgba(0, 30, 255, 0.5), -2.2310569634px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  50% {
+    text-shadow: 0.0808429042px 0 1px rgba(0, 30, 255, 0.5), -0.0808429042px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  55% {
+    text-shadow: 2.3758461067px 0 1px rgba(0, 30, 255, 0.5), -2.3758461067px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  60% {
+    text-shadow: 2.2021930511px 0 1px rgba(0, 30, 255, 0.5), -2.2021930511px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  65% {
+    text-shadow: 2.8638780615px 0 1px rgba(0, 30, 255, 0.5), -2.8638780615px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  70% {
+    text-shadow: 0.4887402516px 0 1px rgba(0, 30, 255, 0.5), -0.4887402516px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  75% {
+    text-shadow: 1.8948491306px 0 1px rgba(0, 30, 255, 0.5), -1.8948491306px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  80% {
+    text-shadow: 0.0833037308px 0 1px rgba(0, 30, 255, 0.5), -0.0833037308px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  85% {
+    text-shadow: 0.0976982726px 0 1px rgba(0, 30, 255, 0.5), -0.0976982726px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  90% {
+    text-shadow: 3.4433397615px 0 1px rgba(0, 30, 255, 0.5), -3.4433397615px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  95% {
+    text-shadow: 2.1841838853px 0 1px rgba(0, 30, 255, 0.5), -2.1841838853px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+  100% {
+    text-shadow: 2.6208764474px 0 1px rgba(0, 30, 255, 0.5), -2.6208764474px 0 1px rgba(255, 0, 80, 0.3), 0 0 3px;
+  }
+}
+.crt::after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(18, 16, 16, 0.1);
+  opacity: 0;
+  z-index: 2;
+  pointer-events: none;
+  animation: flicker 0.15s infinite;
+}
+
+.crt::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+  z-index: 2;
+  background-size: 100% 2px, 3px 100%;
+  pointer-events: none;
+}
+
+.crt {
+  animation: textShadow 1.6s infinite;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -11,6 +11,7 @@ if (!localStorage.getItem("user")) {
   } else {
     localStorage.setItem("user", username);
   }
+  localStorage.setItem("userConectectList", true);
 }
 
 socket.emit("user", localStorage.getItem("user"));
@@ -44,3 +45,32 @@ socket.on("usersOnline", (usersOnline) => {
     users.appendChild(li);
   });
 });
+
+function screenAdapter() {
+  let width = window.innerWidth;
+  const btnUsersConected = document.querySelector("#btnConnected");
+  const connections = document.querySelector(".connections");
+
+  if (width < 768) {
+    localStorage.setItem("userConectectList", false);
+    btnUsersConected.textContent = "Show";
+    connections.classList.add("hiddenElement");
+  } else {
+    localStorage.setItem("userConectectList", true);
+    btnUsersConected.textContent = "Hide";
+  }
+
+  btnUsersConected.addEventListener("click", () => {
+    connections.classList.toggle("hiddenElement");
+    let userConectectList = localStorage.getItem("userConectectList");
+    if (userConectectList === "true") {
+      localStorage.setItem("userConectectList", false);
+      btnUsersConected.textContent = "Show";
+    } else {
+      localStorage.setItem("userConectectList", true);
+      btnUsersConected.textContent = "Hide";
+    }
+  });
+}
+
+screenAdapter();
