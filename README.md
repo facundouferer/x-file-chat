@@ -4,5 +4,5 @@ A simple chat based on the X-File TV series. It was done with NodeJs on the serv
 ## Iniciar: 
 npm install.
 
-##Correrlo para desarrollo:
+## Correrlo para desarrollo:
 npm run dev.
